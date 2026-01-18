@@ -20,7 +20,7 @@ elif [ $WM = '2' ];then
   fi
   sudo -E pacman -S --needed hyprland $DIMA kitty dolphin wofi waybar xdg-desktop-portal-hyprland qt-wayland qt6-wayland
 fi
-if !(cat /etc/pacman.conf|grep -w archlinuxcn);
+if !(cat /etc/pacman.conf|grep -w archlinuxcn);then
   sudo bash -c "echo -e "[archlinuxcn]\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch\n[multilib]\nInclude = /etc/pacman.d/mirrorlist">>/etc/pacman.conf"
   sudo pacman -Syy
 fi
